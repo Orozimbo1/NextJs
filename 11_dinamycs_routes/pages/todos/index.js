@@ -1,5 +1,7 @@
 import styles from '../../styles/Todos.module.css'
 
+import Link from 'next/link'
+
 export async function getStaticProps() {
 
   const data = await fetch('https://jsonplaceholder.typicode.com/todos')
@@ -19,7 +21,7 @@ const Todos = ({ todos }) => {
       <ul className={styles.todo_list}>
         {todos.map((todo) => (
           <li key={todo.id}>
-            {todo.title}
+            <Link href={`/todos/${todo.id}`}>{todo.title}</Link>
           </li>
         ))}
       </ul>

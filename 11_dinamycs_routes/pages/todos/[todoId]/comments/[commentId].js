@@ -11,6 +11,7 @@ const Comment = () => {
     <>
       <Link href={`/todos/${todoId}`}>Voltar</Link> 
       <h1>Exibindo o Comentario: {commentId}</h1>
+      <p>Do todo {todoId}</p>
     </>
   )
 }
